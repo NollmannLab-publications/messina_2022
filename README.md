@@ -13,6 +13,15 @@ Olivier Messina [1], Flavien Raynal [2], Julian Gurgo [1], Jean-Bernard Fiche [1
 
 This is the main script that contains most of the code needed to generate the figures.
 
+1. HiC_Aggregation_Analysis.m 
+
+Is the Matlab script used in this study to compute Aggregation Peak Analysis for chromatin binding factors. 
+The functions used in this script are encoded in an additional file called functionsContainer.m
+
+2. HiM_matrices_plots.m
+
+Is the Matlab script used in this study to compute PWD HiM matrix and contact HiM matrix.
+
 ### data
 
 The latest version of the file containing the data is: XXX.
