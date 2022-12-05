@@ -3,7 +3,7 @@
 % Olivier Messina from Marcelo Nollmann lab
 % Centre de Biologie Structurale Montpellier FRANCE
 
-% Execute with Matlab 2019b.
+% Run with Matlab 2019b.
 
 % This script requires Hi-M datasets generated in this study
 % See our github page for download instructions: https://github.com/NollmannLab/messina_2022
@@ -47,6 +47,48 @@ colormap((jet))
 colorbar
 title(['Contact matrix NC14 Dpp Cells : ' num2str(Number_cells)])
 
+% Plot IBPs vs Not IBPs interaction frequency
+
+RTs_IBPs= [2,3,4,9,13,19,20,32,33,34]; %Insulator 
+RTs_not_IBPs = [1,5,6,8,11,14,17,21,28,29]; %Not Insulator 
+nRTs = size(RTs_IBPs,2);
+
+data_insulators = data(RTs_IBPs,RTs_IBPs,:);
+data_not_insulators = data(RTs_not_IBPs,RTs_not_IBPs,:);
+Matrix_Contact_TSH = []; 
+
+a=1;
+for i=50:50:1500
+    Threshold = i;
+    
+    [Contact_matrix_IBPs] = Sc_analysis_HiM(data_insulators,Threshold);
+    [Contact_matrix_not_IBPs] = Sc_analysis_HiM(data_not_insulators,Threshold);
+    
+    Matrix_Contact_TSH(a,1)=Threshold;
+    
+    
+    for j=1:size(Contact_matrix_IBPs,1)
+        for k=1:size(Contact_matrix_IBPs,1)
+            if j==k
+                Contact_matrix_IBPs(j,k)=NaN;
+                Contact_matrix_not_IBPs(j,k)=NaN;         
+            end
+        end
+    end
+    
+    Matrix_Contact_TSH(a,2)=nanmean(Contact_matrix_IBPs,'all');
+    Matrix_Contact_TSH(a,3)=nanmean(Contact_matrix_not_IBPs,'all');
+    
+    a=a+1;
+end
+
+plot(Matrix_Contact_TSH(:,1),Matrix_Contact_TSH(:,2),'LineWidth',3,'Color',[0 0.5 0])
+xticks([0:100:1500])
+xtickangle(45)
+hold on 
+plot(Matrix_Contact_TSH(:,1),Matrix_Contact_TSH(:,3),'LineWidth',3,'Color',[0.83 0.667 0])
+hold off
+
 %% Section 2 Drosophila melanogaster, dpp locus, nuclear cycle 12
 
 % Load dataset 
@@ -76,6 +118,48 @@ colormap((jet))
 % colormap((PiYG))
 colorbar
 title(['Contact matrix NC12 Dpp Cells : ' num2str(Number_cells)])
+
+% Plot IBPs vs Not IBPs interaction frequency
+
+RTs_IBPs= [2,3,4,9,13,19,20,32,33,34]; %Insulator 
+RTs_not_IBPs = [1,5,6,8,11,14,17,21,28,29]; %Not Insulator 
+nRTs = size(RTs_IBPs,2);
+
+data_insulators = data(RTs_IBPs,RTs_IBPs,:);
+data_not_insulators = data(RTs_not_IBPs,RTs_not_IBPs,:);
+Matrix_Contact_TSH = []; 
+
+a=1;
+for i=50:50:1500
+    Threshold = i;
+    
+    [Contact_matrix_IBPs] = Sc_analysis_HiM(data_insulators,Threshold);
+    [Contact_matrix_not_IBPs] = Sc_analysis_HiM(data_not_insulators,Threshold);
+    
+    Matrix_Contact_TSH(a,1)=Threshold;
+    
+    
+    for j=1:size(Contact_matrix_IBPs,1)
+        for k=1:size(Contact_matrix_IBPs,1)
+            if j==k
+                Contact_matrix_IBPs(j,k)=NaN;
+                Contact_matrix_not_IBPs(j,k)=NaN;         
+            end
+        end
+    end
+    
+    Matrix_Contact_TSH(a,2)=nanmean(Contact_matrix_IBPs,'all');
+    Matrix_Contact_TSH(a,3)=nanmean(Contact_matrix_not_IBPs,'all');
+    
+    a=a+1;
+end
+
+plot(Matrix_Contact_TSH(:,1),Matrix_Contact_TSH(:,2),'LineWidth',3,'Color',[0 0.5 0])
+xticks([0:100:1500])
+xtickangle(45)
+hold on 
+plot(Matrix_Contact_TSH(:,1),Matrix_Contact_TSH(:,3),'LineWidth',3,'Color',[0.83 0.667 0])
+hold off
 
 %% Functions 
 
