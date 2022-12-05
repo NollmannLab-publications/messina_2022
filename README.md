@@ -25,12 +25,9 @@ This is a Matlab script used to compute pair-wise distance and proximity maps.
 
 ### Data
 
-The latest version of the file containing the data is: XXX.
+The latest version of the data can be found at: https://osf.io/aqtxj/.
 
-The file can be downloaded from XXX.
+You will be able to download a Numpy array with the pair-wise distance maps for each of the datasets available: 
 
-This file contains all the necessary sc pairwise distance maps and auxiliary data to generate the figures in the manuscript.
-
-Datasets available:
 1. *Drosophila melanogaster*, dpp locus, nuclear cycle 12
 2. *Drosophila melanogaster*, dpp locus, nuclear cycle 14
