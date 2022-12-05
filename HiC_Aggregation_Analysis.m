@@ -3,7 +3,7 @@
 % Olivier Messina from Marcelo Nollmann lab
 % Centre de Biologie Structurale Montpellier FRANCE
 
-% Execute with Matlab 2019b.
+% Run with Matlab 2019b.
 
 % This script requires 4 files that contain the genomic coordinates of the binding sites of interest 
 % separated by chromosomes.
