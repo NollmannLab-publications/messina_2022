@@ -5,12 +5,8 @@
 
 % Execute with Matlab 2019b.
 
-% This script required HiM dataset generated in this study
-% 
-% Datasets available:
-% 
-%     Drosophila melanogaster, dpp locus, nuclear cycle 12
-%     Drosophila melanogaster, dpp locus, nuclear cycle 14
+% This script requires Hi-M datasets generated in this study
+% See our github page for download instructions: https://github.com/NollmannLab/messina_2022
 
 % Colormap used in the paper are generated with the getPyPlot_cMap function 
 % https://fr.mathworks.com/matlabcentral/fileexchange/68239-pycolormap4matlab
@@ -39,7 +35,7 @@ colorbar
 title(['PWD matrix NC14 Dpp Cells : ' num2str(Number_cells)])
 
 % Plot HiM contact matrix 
-Threshold = 250; % Threshold to consider a proximity to be a contact 
+Threshold = 250; % Threshold to consider a proximity to be a contact, in nm.
 [NC14_Matrix_SC_Binary_Probrability] = Sc_analysis_HiM(data,Threshold);
 
 figure

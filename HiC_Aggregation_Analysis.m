@@ -5,7 +5,7 @@
 
 % Execute with Matlab 2019b.
 
-% This script required 4 files that contain the genomic coordinated of the binding sites of interest 
+% This script requires 4 files that contain the genomic coordinates of the binding sites of interest 
 % separated by chromosomes.
 
 % Example : 
@@ -21,12 +21,12 @@
 % Column 3 The distance from the center of the bin of interest 
 % Column 4 The chromosomal arm
 
-% This script use Hi-C data from Hug et al. ArrayExpress: E-MTAB-4918
+% This script uses Hi-C data from Hug et al. ArrayExpress: E-MTAB-4918
 
 %% Compute data section 1/3
 
 clear all 
-% Complete here with HiC you want to process {'NC14','NC14','NC14','NC14_ZLD','NC14_alpha_amanitin','NC14_triptolide','NC14_water'}
+% Complete here with the name of  the HiC dataset you want to process {'NC14','NC14','NC14','NC14_ZLD','NC14_alpha_amanitin','NC14_triptolide','NC14_water'}
 HiC_files = {'NC14'};
 % Chromosomes to process {'2L','2R','3L','3R','X'}
 Chromosomes ={'2L','2R','3L','3R'};

@@ -14,8 +14,6 @@ classdef functionsContainer
 		%                ================================
 
 		% read file
-		%destDir='/mnt/PALM_dataserv/DATA/Commun/Hi-C/Drosophila/HiCdata_Hug';
-		%cd(destDir);
 		switch NC 
 			case 'NC12'
 				cd('/mnt/PALM_dataserv/DATA/Commun/Hi-C/Drosophila/HiCdata_Hug')
@@ -88,7 +86,6 @@ classdef functionsContainer
 
 
 		for i=1:size(Matrix_all,1)
-			%i*100/size(Matrix_all,1)
 			for j=1:length(Calibration)
 				if Matrix_all{i,9} == Calibration(j,1)
 				    Matrix_all{i,10} = Calibration(j,2); % Change to use calibration Olivier change to 2 to 3
@@ -108,7 +105,6 @@ classdef functionsContainer
 		% Indexing bin 
 		Matrix_all{1,12}='';
 		for i =1:size(Coordinateslibraries,1)
-			%i*100/size(Coordinateslibraries,1)
 			idx = find(Bin1 <= Coordinateslibraries(i,2) & Bin2 >= Coordinateslibraries(i,2));
 				for j=1:size(idx,1)
 				    if isempty(Matrix_all{idx(j),12}) == 0
@@ -121,7 +117,6 @@ classdef functionsContainer
 
 		Matrix_all{1,13}='';
 		for i =1:size(Coordinateslibraries,1)
-			%i*100/size(Coordinateslibraries,1)
 			idx = find(Bin3 <= Coordinateslibraries(i,2) & Bin4 >= Coordinateslibraries(i,2));
 				for j=1:size(idx,1)
 				    if isempty(Matrix_all{idx(j),13}) == 0
@@ -197,7 +192,6 @@ classdef functionsContainer
 		tic
 
 		for i=1:size(Matrix_autosome,1)
-			%i*100/size(Matrix_autosome,1)
 			bin_a = (Matrix_autosome{i,14});
 			bin_b = (Matrix_autosome{i,15});
 			Bin1{i,1}=cell2mat(bin_a);
