@@ -23,6 +23,10 @@ The functions used in this script are encoded in an additional file called funct
 
 This is a Matlab script used to compute pair-wise distance and proximity maps.
 
+- HiC_ChAs_Analysis.R
+
+This is a R script used to compute ChAs analysis for chromatin binding factors.
+
 ### Data
 
 The latest version of the data can be found at: https://osf.io/aqtxj/.
